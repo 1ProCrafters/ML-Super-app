@@ -32,3 +32,19 @@ def average_array(array):
     for i in range(len(array)):
         sum += int(array[i])
     return sum / len(array)
+
+def gaussian_elimination(matrix, vector):
+    n = len(matrix)
+    
+    for i in range(n):
+        # Search for maximum in this column
+        max_el = abs(matrix[i][i])
+        max_row = i
+        for k in range(i+1, n):
+            if abs(matrix[k][i]) > max_el:
+                max_el = abs(matrix[k][i])
+                max_row = k
+
+        # Swap maximum row with current row
+        matrix[i], matrix[max_row] = matrix[max_row], matrix[i]
+        vector[i], vector

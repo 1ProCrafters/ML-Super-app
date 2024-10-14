@@ -1,16 +1,11 @@
 from utils import *
 
-verbose = False
 vars, arrays = (read_csv("test.csv"))
 arrays_bar = []
 
 # Calculate averages
 for i in range(len(arrays)):
     arrays_bar.append(average_array(arrays[i]))
-    
-    if verbose:
-        print(vars[i], ": ", arrays[i])
-        print (arrays_bar)
 
 # Calculate slope and intercept
 def predict(array, independent_var, dependent_var):

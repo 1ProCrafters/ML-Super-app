@@ -29,16 +29,57 @@ Formulas:
 
 Multiple regression is a linear model that predicts a continuous outcome variable based on multiple predictor variables. The goal of multiple regression is to find the best-fitting line or plane that minimizes the difference between predicted and actual values.
 
-Metrics:
+**Mathematical Formulation**
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+Let's denote the dependent variable as `y` and the independent variables as `x1`, `x2`, ..., `xn`. The multiple regression model can be written as:
 
-Formulas:
+`y = β0 + β1x1 + β2x2 + ... + βnxn + ε`
 
-- Slope: $m = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}$
-- Intercept: $b = \bar{y} - m\bar{x}$
+where `β0` is the intercept, `β1`, `β2`, ..., `βn` are the coefficients of the independent variables, and `ε` is the error term.
+
+**Ordinary Least Squares (OLS) Estimation**
+
+The coefficients `β0`, `β1`, `β2`, ..., `βn` are estimated using the Ordinary Least Squares (OLS) method, which minimizes the sum of the squared errors between the predicted and actual values.
+
+The OLS estimation can be formulated as:
+
+`minimize ∑(y_i - (β0 + β1x1_i + β2x2_i + ... + βnxn_i))^2`
+
+where `y_i` is the actual value of the dependent variable, and `x1_i`, `x2_i`, ..., `xn_i` are the actual values of the independent variables.
+
+**Gaussian Elimination**
+
+To solve the system of linear equations, we use the Gaussian elimination method. The matrix form of the system is:
+
+`Xβ = Y`
+
+where `X` is the design matrix, `β` is the vector of coefficients, and `Y` is the vector of actual values.
+
+The Gaussian elimination method transforms the matrix `X` into upper triangular form, and then solves for the coefficients `β` using back substitution.
+
+**Pseudo-Inverse**
+
+In the case where the matrix `X` is singular, we use the pseudo-inverse method to estimate the coefficients. The pseudo-inverse of `X` is denoted as `X+`, and is computed using the singular value decomposition (SVD) of `X`.
+
+The pseudo-inverse is used to solve the system of linear equations:
+
+`X+Y = β`
+
+**Metrics**
+
+- **Mean Squared Error (MSE)**: measures the average difference between predicted and actual values
+- **Mean Absolute Error (MAE)**: measures the average absolute difference between predicted and actual values
+- **Coefficient of Determination (R-squared)**: measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+
+**Formulas**
+
+- **Slope**: `m = ∑(x_i - x̄)(y_i - ȳ) / ∑(x_i - x̄)^2`
+- **Intercept**: `b = ȳ - mx̄`
+- **Coefficient of Determination (R-squared)**: `R^2 = 1 - (∑(y_i - ŷ_i)^2) / (∑(y_i - ȳ)^2)`
+- **Mean Squared Error (MSE)**: `MSE = (∑(y_i - ŷ_i)^2) / n`
+- **Mean Absolute Error (MAE)**: `MAE = (∑|y_i - ŷ_i|) / n`
+
+Note: `x̄` and `ȳ` denote the mean of the independent and dependent variables, respectively. `ŷ_i` denotes the predicted value of the dependent variable.
 
 #### Linear Regression
 
