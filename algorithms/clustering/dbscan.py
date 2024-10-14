@@ -2,7 +2,7 @@
 
 from math import sqrt
 
-class DBSCAN:
+class Dbscan:
     def __init__(self, eps=0.5, min_pts=5):
         self.eps = eps
         self.min_pts = min_pts
