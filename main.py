@@ -1,3 +1,2 @@
-import Regression.simple as simple_regression
-import Regression.multiple as multiple_regression
-
+# main.py
+# Entry point for the Machine Learning Project

@@ -1,259 +1,345 @@
-# Pure Python Machine Learning Models
+# Machine Learning from Scratch in Python
+
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Python-blue)
+
+Welcome to the **Machine Learning from Scratch** project! This repository contains implementations of various machine learning algorithms built entirely with plain Python, without relying on any external libraries. The project is organized into distinct modules covering major machine learning topics, providing a comprehensive framework for understanding and experimenting with foundational ML algorithms.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Algorithms Included](#algorithms-included)
+  - [Classification](#classification)
+  - [Regression](#regression)
+  - [Clustering](#clustering)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+- [Data Processing](#data-processing)
+- [Adding New Algorithms](#adding-new-algorithms)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+## Overview
+
+This project aims to provide a hands-on learning experience by implementing key machine learning algorithms from the ground up using only Python's standard library. By building these models from scratch, you can gain a deeper understanding of their inner workings, strengths, and limitations.
+
+## Project Structure
+
+The project is organized into a modular directory structure, categorizing algorithms based on their primary machine learning tasks. Here's an overview of the directory layout:
+
+```
+ML-Models/
+│
+├── main.py
+├── README.md
+├── data/
+│   └── ... (datasets)
+│
+├── algorithms/
+│   ├── __init__.py
+│   │
+│   ├── classification/
+│   │   ├── __init__.py
+│   │   ├── utils.py
+│   │   ├── logistic_regression.py
+│   │   ├── decision_tree.py
+│   │   ├── support_vector_machine.py
+│   │   ├── naive_bayes.py
+│   │   ├── k_nearest_neighbors.py
+│   │   ├── random_forest.py
+│   │   └── gradient_boosting.py
+│   │
+│   ├── regression/
+│   │   ├── __init__.py
+│   │   ├── utils.py
+│   │   ├── linear_regression.py
+│   │   ├── ridge_regression.py
+│   │   ├── lasso_regression.py
+│   │   ├── polynomial_regression.py
+│   │   ├── support_vector_regression.py
+│   │   ├── decision_tree_regression.py
+│   │   └── random_forest_regression.py
+│   │
+│   └── clustering/
+│       ├── __init__.py
+│       ├── utils.py
+│       ├── k_means.py
+│       ├── hierarchical_clustering.py
+│       ├── dbscan.py
+│       ├── mean_shift.py
+│       └── gaussian_mixture.py
+│
+└── utils/
+    ├── __init__.py
+    ├── data_processing.py
+    ├── metrics.py
+    └── matrix.py
+```
+
+### Description of Key Components
+
+- **`main.py`**: The entry point of the application. Users interact with this script to specify the model type, model name, dataset, and parameters for training and evaluation.
+
+- **`data/`**: Directory designated for storing datasets in CSV format. Organize your datasets here for easy access.
+
+- **`algorithms/`**: Contains subdirectories for each major machine learning topic:
+
+  - **`classification/`**: Implements classification algorithms.
+  - **`regression/`**: Implements regression algorithms.
+  - **`clustering/`**: Implements clustering algorithms.
+
+  Each subdirectory includes:
+
+  - **`utils.py`**: Common utility functions specific to the topic.
+  - **Algorithm Files**: Separate Python files for each machine learning model (e.g., `logistic_regression.py`, `k_means.py`).
+
+- **`utils/`**: Houses general utility modules not tied to a specific ML topic:
+
+  - **`data_processing.py`**: Functions for loading and preprocessing data.
+  - **`metrics.py`**: Evaluation metrics for model performance.
+  - **`matrix.py`**: Basic matrix operations required for various algorithms.
 
-This project is where I will try to create the pure python code for making machine learning models without using any external libraries and using only any files I make or any python libraries that I make. I plan to eventually make an addon to the super app about creating custom pre-existing models and also custom new idea of models.
+## Algorithms Included
 
-## Models
+### Classification
 
-### Regression Models
+- **Logistic Regression** (`logistic_regression.py`)
+- **Decision Tree** (`decision_tree.py`)
+- **Support Vector Machine** (`support_vector_machine.py`)
+- **Naive Bayes** (`naive_bayes.py`)
+- **K-Nearest Neighbors** (`k_nearest_neighbors.py`)
+- **Random Forest** (`random_forest.py`)
+- **Gradient Boosting** (`gradient_boosting.py`)
 
-Regression models are a type of supervised learning model that are used to predict continuous outcomes. The goal of regression is to find the best-fitting line or curve that minimizes the difference between predicted and actual values.
+### Regression
 
-Types of Regression Models:
+- **Linear Regression** (`linear_regression.py`)
+- **Ridge Regression** (`ridge_regression.py`)
+- **Lasso Regression** (`lasso_regression.py`)
+- **Polynomial Regression** (`polynomial_regression.py`)
+- **Support Vector Regression** (`support_vector_regression.py`)
+- **Decision Tree Regression** (`decision_tree_regression.py`)
+- **Random Forest Regression** (`random_forest_regression.py`)
 
-#### Simple Regression
+### Clustering
 
-Simple regression is a linear model that predicts a continuous outcome variable based on a single predictor variable. The goal of simple regression is to find the best-fitting line that minimizes the sum of the squared errors between predicted and actual values.
+- **K-Means** (`k_means.py`)
+- **Hierarchical Clustering** (`hierarchical_clustering.py`)
+- **DBSCAN** (`dbscan.py`)
+- **Mean Shift** (`mean_shift.py`)
+- **Gaussian Mixture Models** (`gaussian_mixture.py`)
 
-Metrics:
+## Getting Started
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variable
+### Prerequisites
 
-Formulas:
+- **Python 3.6 or higher**: Ensure you have Python installed on your machine. You can download it from [Python's official website](https://www.python.org/downloads/).
 
-- Slope: $m = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}$
-- Intercept: $b = \bar{y} - m\bar{x}$
+### Usage
 
-#### Multiple Regression
+1. **Clone the Repository**
 
-Multiple regression is a linear model that predicts a continuous outcome variable based on multiple predictor variables. The goal of multiple regression is to find the best-fitting line or plane that minimizes the difference between predicted and actual values.
+   ```bash
+   git clone https://github.com/1ProCrafters/ML-Super-app/tree/ML-Models.git
+   cd ML-Super-app
+   ```
 
-**Mathematical Formulation**
+2. **Prepare Your Dataset**
 
-Let's denote the dependent variable as `y` and the independent variables as `x1`, `x2`, ..., `xn`. The multiple regression model can be written as:
+   - Place your dataset CSV files inside the `data/` directory.
+   - Ensure that the first row contains the header with column names.
 
-`y = β0 + β1x1 + β2x2 + ... + βnxn + ε`
+3. **Run a Model**
 
-where `β0` is the intercept, `β1`, `β2`, ..., `βn` are the coefficients of the independent variables, and `ε` is the error term.
+   The `main.py` script allows you to train and evaluate any supported machine learning model. The general usage is:
 
-**Ordinary Least Squares (OLS) Estimation**
+   ```bash
+   python main.py <topic> <model_name> <dataset_path> <target_column> [params]
+   ```
 
-The coefficients `β0`, `β1`, `β2`, ..., `βn` are estimated using the Ordinary Least Squares (OLS) method, which minimizes the sum of the squared errors between the predicted and actual values.
+   - **`<topic>`**: The machine learning category (e.g., `classification`, `regression`, `clustering`).
+   - **`<model_name>`**: The specific model to use (e.g., `logistic_regression`, `k_means`).
+   - **`<dataset_path>`**: Path to your dataset CSV file (e.g., `data/iris.csv`).
+   - **`<target_column>`**: The name of the target variable column in your dataset.
+   - **`[params]`**: Optional model-specific parameters in `key=value` format.
 
-The OLS estimation can be formulated as:
+   ### Examples
 
-`minimize ∑(y_i - (β0 + β1x1_i + β2x2_i + ... + βnxn_i))^2`
+   - **Training a Logistic Regression Classifier**
 
-where `y_i` is the actual value of the dependent variable, and `x1_i`, `x2_i`, ..., `xn_i` are the actual values of the independent variables.
+     ```bash
+     python main.py classification logistic_regression data/iris.csv species learning_rate=0.01 epochs=1000
+     ```
 
-**Gaussian Elimination**
+   - **Clustering with K-Means**
 
-To solve the system of linear equations, we use the Gaussian elimination method. The matrix form of the system is:
+     ```bash
+     python main.py clustering k_means data/clusters.csv feature1 feature2 k=3 max_iterations=100
+     ```
 
-`Xβ = Y`
+   - **Training a Random Forest Regressor**
 
-where `X` is the design matrix, `β` is the vector of coefficients, and `Y` is the vector of actual values.
+     ```bash
+     python main.py regression random_forest_regression data/housing.csv price n_trees=10 max_depth=5
+     ```
 
-The Gaussian elimination method transforms the matrix `X` into upper triangular form, and then solves for the coefficients `β` using back substitution.
+## Data Processing
 
-**Pseudo-Inverse**
+All data handling and preprocessing are managed through utility functions located in the `utils/data_processing.py` module. Key functionalities include:
 
-In the case where the matrix `X` is singular, we use the pseudo-inverse method to estimate the coefficients. The pseudo-inverse of `X` is denoted as `X+`, and is computed using the singular value decomposition (SVD) of `X`.
+- **Loading CSV Files**
 
-The pseudo-inverse is used to solve the system of linear equations:
+  ```python
+  from utils.data_processing import load_csv
 
-`X+Y = β`
+  header, rows = load_csv('data/your_dataset.csv')
+  ```
 
-**Metrics**
+- **Preprocessing Data**
 
-- **Mean Squared Error (MSE)**: measures the average difference between predicted and actual values
-- **Mean Absolute Error (MAE)**: measures the average absolute difference between predicted and actual values
-- **Coefficient of Determination (R-squared)**: measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+  Convert raw data into feature matrices and target vectors.
 
-**Formulas**
+  ```python
+  from utils.data_processing import preprocess_data
 
-- **Slope**: `m = ∑(x_i - x̄)(y_i - ȳ) / ∑(x_i - x̄)^2`
-- **Intercept**: `b = ȳ - mx̄`
-- **Coefficient of Determination (R-squared)**: `R^2 = 1 - (∑(y_i - ŷ_i)^2) / (∑(y_i - ȳ)^2)`
-- **Mean Squared Error (MSE)**: `MSE = (∑(y_i - ŷ_i)^2) / n`
-- **Mean Absolute Error (MAE)**: `MAE = (∑|y_i - ŷ_i|) / n`
+  X, y = preprocess_data(rows, target_index)
+  ```
 
-Note: `x̄` and `ȳ` denote the mean of the independent and dependent variables, respectively. `ŷ_i` denotes the predicted value of the dependent variable.
+- **Normalization and Standardization**
 
-#### Linear Regression
+  Normalize or standardize features to improve model performance.
 
-Linear regression is a linear model that predicts a continuous outcome variable based on a single predictor variable. The goal of linear regression is to find the best-fitting line that minimizes the sum of the squared errors between predicted and actual values.
+  ```python
+  from utils.data_processing import normalize, standardize
 
-Metrics:
+  X_normalized = normalize(X)
+  X_standardized = standardize(X)
+  ```
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variable
+- **Train-Test Split**
 
-Formulas:
+  Split data into training and testing sets.
 
-- Slope: $m = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}$
-- Intercept: $b = \bar{y} - m\bar{x}$
+  ```python
+  from utils.data_processing import train_test_split
 
-#### Multiple Linear Regression
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+  ```
 
-Multiple linear regression is a linear model that predicts a continuous outcome variable based on multiple predictor variables. The goal of multiple linear regression is to find the best-fitting line or plane that minimizes the difference between predicted and actual values.
+## Adding New Algorithms
 
-Metrics:
+To extend the project with new machine learning algorithms, follow these steps:
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+1. **Choose the Appropriate Category**
 
-Formulas:
+   Determine whether your algorithm falls under `classification`, `regression`, or `clustering`.
 
-- Slope: $m = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}$
-- Intercept: $b = \bar{y} - m\bar{x}$
+2. **Create a New Python File**
 
-#### Ridge Regression
+   Inside the relevant subdirectory (e.g., `algorithms/classification/`), create a new `.py` file named after your algorithm (e.g., `my_new_algorithm.py`).
 
-Ridge regression is a linear model that predicts a continuous outcome variable based on multiple predictor variables. The goal of ridge regression is to find the best-fitting line or plane that minimizes the difference between predicted and actual values, while also penalizing the model for large coefficients.
+3. **Implement the Model Class**
 
-Metrics:
+   - Ensure your class has a consistent interface with `fit` and `predict` methods.
+   - Utilize utility functions from `utils/` as needed.
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+   ```python
+   # algorithms/classification/my_new_algorithm.py
 
-Formulas:
+   class MyNewAlgorithm:
+       def __init__(self, param1=value1, param2=value2):
+           # Initialize parameters
+           pass
 
-- MSE: SSE / n
-- MAE: |y - y'| / n
-- R-squared: 1 - (SSE / SST)
+       def fit(self, X, y):
+           # Implement training logic
+           pass
 
-where SSE is the sum of the squared errors, SST is the total sum of squares, n is the sample size, y is the dependent variable, and y' is the predicted value.
+       def predict(self, X):
+           # Implement prediction logic
+           return predictions
+   ```
 
-#### Lasso Regression
+4. **Update `main.py`**
 
-Lasso regression is a linear model that predicts a continuous outcome variable based on multiple predictor variables. The goal of lasso regression is to find the best-fitting line or plane that minimizes the difference between predicted and actual values, while also selecting the most important features.
+   No changes are necessary if your algorithm follows the standard interface. You can now use it via `main.py` with the appropriate parameters.
 
-Metrics:
+5. **Test Your Implementation**
 
-- Mean Squared Error (MSE): measures the average difference between predicted and actual values
-- Mean Absolute Error (MAE): measures the average absolute difference between predicted and actual values
-- Coefficient of Determination (R-squared): measures the proportion of the variance in the dependent variable that is predictable from the independent variables
+   Ensure your new algorithm works correctly by running it on sample datasets and verifying the results.
 
-Formulas:
+## Evaluation Metrics
 
-- MSE: SSE / n
-- MAE: |y - y'| / n
-- R-squared: 1 - (SSE / SST)
+Performance evaluation is crucial for assessing the effectiveness of your models. The `utils/metrics.py` module provides essential metrics:
 
-where SSE is the sum of the squared errors, SST is the total sum of squares, n is the sample size, y is the dependent variable, and y' is the predicted value.
+- **Regression Metrics:**
 
-Background Math:
+  - **Mean Squared Error (MSE)**
+  - **Mean Absolute Error (MAE)** _(To be implemented)_
 
-- Linear Algebra: matrix operations, vector spaces, eigenvalues and eigenvectors
-- Calculus: optimization techniques, derivatives, integrals
-- Probability Theory: probability distributions, Bayes' theorem
+- **Classification Metrics:**
 
-### Classification Models
+  - **Accuracy**
+  - **Precision** _(To be implemented)_
+  - **Recall** _(To be implemented)_
+  - **F1-Score** _(To be implemented)_
 
-Classification models are a type of supervised learning model that are used to predict categorical outcomes. The goal of classification is to find the best-fitting decision boundary that minimizes the difference between predicted and actual values.
+- **Clustering Metrics:**
+  - **Silhouette Score** _(To be implemented)_
+  - **Davies-Bouldin Index** _(To be implemented)_
 
-Types of Classification Models:
+### Usage Example
 
-#### Logistic Regression
+```python
+from utils.metrics import mean_squared_error, accuracy
 
-Logistic regression is a linear model that predicts a categorical outcome variable based on multiple predictor variables. The goal of logistic regression is to find the best-fitting decision boundary that minimizes the difference between predicted and actual values.
+# For Regression
+mse = mean_squared_error(y_true, y_pred)
+print(f"Mean Squared Error: {mse}")
 
-Metrics:
+# For Classification
+acc = accuracy(y_true, y_pred)
+print(f"Accuracy: {acc}")
+```
 
-- Accuracy: measures the proportion of correctly classified instances
-- Precision: measures the proportion of true positives among all positive predictions
-- Recall: measures the proportion of true positives among all actual positive instances
-- F1 Score: measures the harmonic mean of precision and recall
+## Contributing
 
-Formulas:
+Contributions are welcome! Whether it's adding new algorithms, improving existing implementations, or enhancing documentation, your efforts are appreciated.
 
-- Slope: $m = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}$
-- Intercept: $b = \bar{y} - m\bar{x}$
+1. **Fork the Repository**
 
-#### Support Vector Machines
+2. **Create a Feature Branch**
 
-Support vector machines is a linear model that predicts a categorical outcome variable based on multiple predictor variables. The goal of support vector machines is to find the best-fitting decision boundary that minimizes the difference between predicted and actual values.
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
 
-Metrics:
+3. **Commit Your Changes**
 
-- Accuracy: measures the proportion of correctly classified instances
-- Precision: measures the proportion of true positives among all positive predictions
-- Recall: measures the proportion of true positives among all actual positive instances
-- F1 Score: measures the harmonic mean of precision and recall
+   ```bash
+   git commit -m "Add Your Feature"
+   ```
 
-Formulas:
+4. **Push to the Branch**
 
-- SVM: $y = \sum_{i=1}^n \alpha_i x_i + b$
+   ```bash
+   git push origin feature/YourFeature
+   ```
 
-#### Tree-Based Models
+5. **Open a Pull Request**
 
-##### Decision Tree
+## License
 
-Decision tree is a non-parametric model that predicts a categorical outcome variable based on multiple predictor variables. The goal of decision tree is to find the best-fitting decision boundary that minimizes the difference between predicted and actual values.
+This project is licensed under the [MIT License](LICENSE).
 
-Metrics:
+## Acknowledgements
 
-- Accuracy: measures the proportion of correctly classified instances
-- Precision: measures the proportion of true positives among all positive predictions
-- Recall: measures the proportion of true positives among all actual positive instances
-- F1 Score: measures the harmonic mean of precision and recall
+- Inspired by the desire to understand machine learning algorithms at a fundamental level.
+- Special thanks to the open-source community for providing valuable resources and insights.
 
-Formulas:
+---
 
-- Entropy: $H(X) = -\sum_{x \in X} p(x) \log_2 p(x)$
-- Information Gain: $IG(X, Y) = H(X) - H(X|Y)$
-
-##### Random Forest
-
-Random forest is an ensemble of decision trees that predicts a categorical outcome variable based on multiple predictor variables. The goal of random forest is to find the best-fitting decision boundary that minimizes the difference between predicted and actual values.
-
-Metrics:
-
-- Accuracy: measures the proportion of correctly classified instances
-- Precision: measures the proportion of true positives among all positive predictions
-- Recall: measures the proportion of true positives among all actual positive instances
-- F1 Score: measures the harmonic mean of precision and recall
-
-Formulas:
-
-- Entropy: $H(X) = -\sum_{x \in X} p(x) \log_2 p(x)$
-- Information Gain: $IG(X, Y) = H(X) - H(X|Y)$
-
-### Clustering Models
-
-Clustering models are a type of unsupervised learning model that are used to predict categorical outcomes. The goal of clustering models is to find the best-fitting clusters that minimize the difference between predicted and actual values.
-
-Types of Clustering Models:
-
-#### K-Means Clustering
-
-K-means clustering is a type of non-parametric model that predicts a categorical outcome variable based on multiple predictor variables. The goal of K-means clustering is to find the best-fitting clusters that minimize the difference between predicted and actual values.
-
-Metrics:
-
-- Silhouette Coefficient: measures the separation and cohesion of each cluster
-- Calinski-Harabasz Index: measures the ratio of between-cluster variance to within-cluster variance
-
-Formulas:
-
-- Silhouette Coefficient: $S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}$
-- Calinski-Harabasz Index: $CH = \frac{tr(B) \cdot (N - k)}{tr(W) \cdot (k - 1)}$
-
-#### Hierarchical Clustering
-
-Hierarchical clustering is an ensemble of K-means clustering models that are used to predict a categorical outcome variable based on multiple predictor variables. The goal of hierarchical clustering is to find the best-fitting clusters that minimize the difference between predicted and actual values.
-
-Metrics:
-
-- Silhouette Coefficient: measures the separation and cohesion of each cluster
-- Calinski-Harabasz Index: measures the ratio of between-cluster variance to within-cluster variance
-
-Formulas:
-
-- Silhouette Coefficient: $S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}$
-- Calinski-Harabasz Index: $CH = \frac{tr(B) \cdot (N - k)}{tr(W) \cdot (k - 1)}$
+Feel free to explore, learn, and contribute! If you have any questions or need assistance, please open an issue or reach out to me anytime.
