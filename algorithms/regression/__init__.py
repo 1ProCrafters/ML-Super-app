@@ -1,1 +1,9 @@
- 
+# algorithms/regression/__init__.py
+
+from .linear_regression import LinearRegression
+from .ridge_regression import RidgeRegression
+from .lasso_regression import LassoRegression
+from .polynomial_regression import PolynomialRegression
+from .support_vector_regression import SupportVectorRegression
+from .decision_tree_regression import DecisionTreeRegression
+from .random_forest_regression import RandomForestRegression
