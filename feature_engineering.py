@@ -1,25 +1,4 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-import xgboost as xgb
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, f_classif
-import plotly.express as px
-from sklearn.preprocessing import LabelEncoder
-import seaborn as sns
-import base64
-from sklearn.impute import KNNImputer
-from sklearn.preprocessing import RobustScaler
+from __init__ import *
 
 
 

@@ -1,11 +1,4 @@
-import streamlit as st
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, mean_squared_error, r2_score
-from sklearn.metrics import mean_absolute_error
-import matplotlib.pyplot as plt
-import pandas as pd  # Import pandas for data manipulation
-import numpy as np
+from __init__ import *
 
 def decision_tree_page():
     st.title("Decision Tree Analysis")
@@ -27,8 +20,6 @@ def decision_tree_page():
 
         st.write(data.head())
         st.write(data.head())
-
-  
 
         # Split data into training and test sets
         if len(features) > 0 and target:
@@ -87,8 +78,6 @@ def decision_tree_page():
             - **Macro Avg**: Arithmetic mean of the precision and recall for each class, without taking the class distribution into account. It treats all classes equally, no matter the sample size.
             - **Weighted Avg**: Precision and recall for each class are weighted by the number of true instances for each class. This helps account for class imbalance; that is, when one class might have significantly more samples than the other.
             - **Support**: The number of actual occurrences of the class in the specified dataset. For balanced datasets, it is the same for both classes.
-            
-            
             """)
                     st.text(class_report)
                
@@ -105,9 +94,6 @@ def decision_tree_page():
                     r2 = r2_score(y_test, predictions)
                     st.write("Mean Squared Error:", mse)
                     st.write("R^2 Score:", r2)
-
-
-                
 
                 # Visualize the tree
                 fig, ax = plt.subplots(figsize=(12, 12))

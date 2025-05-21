@@ -1,33 +1,4 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-import xgboost as xgb
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, f_classif
-import plotly.express as px
-from sklearn.preprocessing import LabelEncoder
-import seaborn as sns
-import base64
-from sklearn.impute import KNNImputer
-from sklearn.preprocessing import RobustScaler
-import statsmodels.api as sm
-from statsmodels.tsa.stattools import adfuller
-from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
-from statsmodels.tsa.arima.model import ARIMA
-from pmdarima import auto_arima
-from statsmodels.tsa.seasonal import seasonal_decompose
-from prophet import Prophet
-
+from __init__ import *
 
 def time_series_analysis():
     st.write("Time Series Analysis with ARIMA")

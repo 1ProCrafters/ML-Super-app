@@ -1,22 +1,4 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor, HistGradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeRegressor
-import xgboost as xgb
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, f_classif
-import plotly.express as px
-import base64
-from sklearn.ensemble import RandomForestClassifier
-
+from __init__ import *
 
 def advanced_data_analysis():
     if 'data' in st.session_state and st.session_state.data is not None:
@@ -119,4 +101,3 @@ def perform_feature_selection(data):
     st.write("Top Features with F-values and p-values:")
     for feat, score, p_value in zip(top_features, f_scores, p_values):
         st.write(f"{feat}: F-value = {score:.2f}, p-value = {p_value:.4f}")
-

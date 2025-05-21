@@ -1,44 +1,4 @@
-from dowhy.causal_estimators import CausalEstimator
-from dowhy.causal_refuters.data_subset_refuter import DataSubsetRefuter
-from upload_data_page import upload_data
-from feature_engineering import feature_engineering, display_data_preview, display_handle_missing_values, display_process_currency_percentage
-from feature_engineering import display_drop_columns, display_data_transformation, display_encode_categorical, display_time_series_features, display_convert_to_datetime
-from explore_data import explore_data, display_boxplot, display_binary_distribution, feature_comparison_graph_page
-from regression import evaluate_model_page, display_model_performance_comparison, prepare_data, create_models, fit_models, evaluate_models, plot_model_performance
-from regression import display_select_target_features_and_train, display_feature_importance, display_prediction_vs_actual, display_residuals_plot
-from regression import display_correlation_heatmap, evaluate_model_page
-from advance_data_analysis import advanced_data_analysis, perform_classification, perform_clustering, perform_dimensionality_reduction
-from time_series_analysis import time_series_analysis, visualize_time_series_data,display_acf_pacf, fit_arima_model
-import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-import xgboost as xgb
-import seaborn as sns
-import matplotlib.pyplot as plt
-import streamlit as st
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, f_classif
-import plotly.express as px
-from sklearn.preprocessing import LabelEncoder
-import seaborn as sns
-import base64
-from prophet import Prophet
-import os
-from dowhy import CausalModel
-import re
-import graphviz
-from graphviz import Digraph
-from io import BytesIO
+from __init__ import *
 
 def extract_relationships_from_dot(dot_representation):
     """Extract relationships from DOT format."""
@@ -190,9 +150,6 @@ def display_causal_model_creation():
         st.session_state.estimate = estimate
         st.success("Causal model created and estimated successfully!")
 
-
-
-
 def generate_download_link(filename, download_text):
     """Generate a download link for a given file and link text."""
     with open(filename, "rb") as f:
@@ -200,13 +157,6 @@ def generate_download_link(filename, download_text):
     b64 = base64.b64encode(file_data).decode()
     href = f'<a href="data:application/octet-stream;base64,{b64}" download="{filename}">{download_text}</a>'
     return href
-
-
-
-
-    
-
-
 
 def display_refutation_tests():
     """Sub-task for running refutation tests."""
@@ -257,11 +207,6 @@ def display_refutation_tests():
             st.write("Interpretation: The original causal estimate is consistent and robust, even when using a subset of the data.")
         elif p_value and p_value <= 0.05:
             st.write("Interpretation: The original causal estimate may not be reliable, as it changes significantly with a subset of the data.")
-
-
-
-
-
 
 def causality_page():
     st.header("Causality Analysis")

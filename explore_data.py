@@ -1,29 +1,4 @@
-import time
-import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-import xgboost as xgb
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, f_classif
-from sklearn.preprocessing import LabelEncoder
-import seaborn as sns
-import base64
-from sklearn.inspection import permutation_importance
-import time
-import plotly.express as px
-
+from __init__ import *
 
 def explore_data():
     if 'data' in st.session_state and st.session_state.data is not None:
@@ -42,8 +17,6 @@ def explore_data():
             evaluate_feature_importance()
     else:
         st.warning("Please upload data first.")
-
-
 
 def display_boxplot():
     # Allow user to select a feature/column for the boxplot
@@ -158,11 +131,6 @@ def plot_avg_for_feature(data, target_feature, feature):
     st.pyplot(plt)
     plt.close()
 
-
-
-
-
-
 def evaluate_feature_importance():
     st.write("""
     In this section, we will evaluate the importance of each feature using permutation importance. 
@@ -227,6 +195,3 @@ def evaluate_feature_importance():
             st.experimental_rerun()
 
             st.write(f"Dropped the following features: {', '.join(features_to_drop)}")
-
-
-
